@@ -3,7 +3,7 @@ export async function onRequest(context) {
   const { code } = body;
 
   const client_key = "sbawu97nzqxev1whkh";
-  const client_secret = "fgs21FkmIULQBV9iFZ6FJKOY6dPBPL";
+  const client_secret = "fgs21FkmIULQBV9iFZ6FJvJKOY6dPBPL";
 
   const resp = await fetch("https://open.tiktokapis.com/v2/oauth/token/", {
     method: "POST",
