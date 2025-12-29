@@ -4,7 +4,7 @@ export async function onRequest(context) {
   crypto.getRandomValues(array);
   const state = [...array].map(b => b.toString(16).padStart(2, '0')).join('');
 
-  const client_key = "sbawu97nzqxev1whkh";
+  const client_key = "awxz5bpprf0w1e7t";
   const redirect_uri = "https://postik5987.pages.dev/callback";
   const scope = "user.info.basic,video.upload,video.publish";
 

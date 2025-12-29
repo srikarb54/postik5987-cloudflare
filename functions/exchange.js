@@ -2,8 +2,8 @@ export async function onRequest(context) {
   const body = await context.request.json();
   const { code } = body;
 
-  const client_key = "sbawu97nzqxev1whkh";
-  const client_secret = "fgs21FkmIULQBV9iFZ6FJKOY6dPBPL";
+  const client_key = "awxz5bpprf0w1e7t";
+  const client_secret = "c3506efI0LsvQNmFfnuqlUqJ4saDOEt2";
 
   // Build x-www-form-urlencoded body
   const form = new URLSearchParams();
