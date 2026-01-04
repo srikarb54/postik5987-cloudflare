@@ -24,12 +24,12 @@ export async function onRequest(context) {
     },
     body: JSON.stringify({
       post_info: {
-        title,
-        privacy_level,
-        disable_comment: !allow_comment,
-        disable_duet: !allow_duet,
-        disable_stitch: !allow_stitch
-      },
+		title: title || "Test upload",
+		privacy_level: privacy_level || "PUBLIC",
+		disable_comment: !allow_comment,
+		disable_duet: !allow_duet,
+		disable_stitch: !allow_stitch
+		},
       source_info: {
         source: "PULL_FROM_URL",
         video_url
