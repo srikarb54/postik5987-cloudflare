@@ -30,14 +30,11 @@ export async function onRequest(context) {
     const data = await resp.json();
 
     // Display results as HTML for debugging
-    return new Response(
-      `<h1>Token Exchange Result</h1>
-       <pre>${JSON.stringify(data, null, 2)}</pre>
-       <p>Copy your access_token and refresh_token.</p>`,
-      { headers: { "Content-Type": "text/html" } }
-    );
-
-  } catch (err) {
-    return new Response("Callback error: " + err.toString(), { status: 500 });
+    return new Response(`
+	<script>
+	localStorage.setItem("access_token", "${data.access_token}");
+	window.location.href = "/publish.html";
+	</script>
+	`, { headers: { "Content-Type": "text/html" }});
   }
 }

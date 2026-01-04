@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Post to TikTok</title>
+<style>
+  body { font-family: sans-serif; max-width: 700px; margin: 40px auto; }
+  .disabled { opacity: 0.5; pointer-events: none; }
+</style>
+</head>
+<body>
+
+<h2>Post to TikTok</h2>
+
+<p>Posting as: <strong id="nickname">Loading…</strong></p>
+
+<h3>Content Preview</h3>
+<video id="preview" controls width="100%"></video>
+
+<h3>Post Settings</h3>
+
+<label>Title</label><br>
+<input id="title" type="text" style="width:100%"><br><br>
+
+<label>Privacy</label><br>
+<select id="privacy">
+  <option value="" disabled selected>Select privacy</option>
+</select><br><br>
+
+<h4>Interaction</h4>
+<label><input type="checkbox" id="comment"> Allow Comment</label><br>
+<label><input type="checkbox" id="duet"> Allow Duet</label><br>
+<label><input type="checkbox" id="stitch"> Allow Stitch</label><br><br>
+
+<h4>Commercial Content</h4>
+<label><input type="checkbox" id="commercial_toggle"> Enable commercial content</label><br>
+
+<div id="commercial_options" class="disabled">
+  <label><input type="checkbox" id="your_brand"> Your Brand</label><br>
+  <label><input type="checkbox" id="branded"> Branded Content</label><br>
+</div>
+
+<p id="declaration"></p>
+
+<label>
+  <input type="checkbox" id="consent">
+  <span id="consent_text">By posting, you agree to TikTok's Music Usage Confirmation</span>
+</label><br><br>
+
+<button id="publish" disabled>Publish to TikTok</button>
+
+<p><em>After publishing, it may take a few minutes for the content to appear on your profile.</em></p>
+
+<script src="publish.js"></script>
+</body>
+</html>
