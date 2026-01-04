@@ -58,7 +58,7 @@ document.getElementById("publish").onclick = async () => {
   }
   // 🛡️ END BLOCK
 
-  const resp = await fetch("/publish", {
+  const resp = await fetch("/api-publish", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)
