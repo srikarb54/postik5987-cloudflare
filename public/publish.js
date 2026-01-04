@@ -69,3 +69,4 @@ document.getElementById("publish").onclick = async () => {
 };
 
 updateCommercialUI();
+document.getElementById("preview").src = "https://postik5987.pages.dev/sample.mp4";
