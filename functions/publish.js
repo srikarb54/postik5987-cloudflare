@@ -1,4 +1,5 @@
 export async function onRequest(context) {
+
   const body = await context.request.json();
 
   const {
@@ -11,7 +12,10 @@ export async function onRequest(context) {
     allow_stitch
   } = body;
 
-  // 1️⃣ Initialize upload
+  if (!access_token) {
+    return new Response(JSON.stringify({ error: "Missing access token" }), { status: 400 });
+  }
+
   const initResp = await fetch("https://open.tiktokapis.com/v2/post/publish/video/init/", {
     method: "POST",
     headers: {

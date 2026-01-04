@@ -43,13 +43,20 @@ privacy.onchange = updateCommercialUI;
 document.getElementById("publish").onclick = async () => {
   const payload = {
     access_token: localStorage.getItem("access_token"),
-    video_url: "https://postik5987.pages.dev/sample.mp4",  // your test video
+    video_url: "https://postik5987.pages.dev/sample.mp4",
     title: document.getElementById("title").value,
     privacy_level: document.getElementById("privacy").value,
     allow_comment: document.getElementById("comment").checked,
     allow_duet: document.getElementById("duet").checked,
     allow_stitch: document.getElementById("stitch").checked
   };
+
+  // 🛡️ ADD THIS BLOCK
+  if (!payload.access_token) {
+    alert("You are not logged in. Please log in with TikTok again.");
+    return;
+  }
+  // 🛡️ END BLOCK
 
   const resp = await fetch("/publish", {
     method: "POST",
@@ -60,3 +67,5 @@ document.getElementById("publish").onclick = async () => {
   const data = await resp.json();
   alert("Publish started:\n" + JSON.stringify(data, null, 2));
 };
+
+updateCommercialUI();
